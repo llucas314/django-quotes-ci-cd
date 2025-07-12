@@ -1,3 +1,5 @@
+"""Models for the quotes app."""
+
 from django.db import models
 
 

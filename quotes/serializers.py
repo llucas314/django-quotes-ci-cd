@@ -1,4 +1,7 @@
+"""Serializers for the quotes app."""
+
 from rest_framework import serializers
+
 from .models import Quote
 
 

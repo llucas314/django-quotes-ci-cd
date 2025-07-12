@@ -1,9 +1,12 @@
-from rest_framework import generics, views, status
+"""Views for the quotes app."""
+
+import random
+
+from rest_framework import generics, status, views
 from rest_framework.response import Response
 
 from .models import Quote
 from .serializers import QuoteSerializer
-import random
 
 
 class QuoteAPIView(generics.ListAPIView):

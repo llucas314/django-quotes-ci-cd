@@ -1,7 +1,11 @@
-from rest_framework.test import APITestCase
+"""Tests for the quotes app."""
+
+from django.urls import reverse
+
 from rest_framework import status
 from rest_framework.response import Response
-from django.urls import reverse
+from rest_framework.test import APITestCase
+
 from .models import Quote
 from .serializers import QuoteSerializer
 
@@ -25,7 +29,7 @@ class QuoteAPITestCase(APITestCase):
         response = self.client.get(self.url)
         if isinstance(response, Response):
             self.assertEqual(response.status_code, status.HTTP_200_OK)
-            # Check if the response data matches the serialized data of all quotes
+            # Check if the response data matches the data of all quotes
             quotes = Quote.objects.all()
             serializer = QuoteSerializer(quotes, many=True)
             self.assertEqual(response.data, serializer.data)
@@ -61,7 +65,7 @@ class RandomQuoteAPITestCase(APITestCase):
         response = self.client.get(self.url)
         if isinstance(response, Response) and response.data is not None:
             self.assertEqual(response.status_code, status.HTTP_200_OK)
-            # Verify that the returned quote's text and author are from our known quotes
+            # Verify that the returned quote's data matches
             returned_text = response.data["text"]
             returned_author = response.data["author"]
 

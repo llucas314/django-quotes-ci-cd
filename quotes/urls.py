@@ -1,4 +1,7 @@
+"""URL configuration for quotes app."""
+
 from django.urls import path
+
 from .views import QuoteAPIView, RandomQuoteAPIView
 
 urlpatterns = [
