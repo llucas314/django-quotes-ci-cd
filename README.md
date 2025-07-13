@@ -1,5 +1,6 @@
 # Random Quote API
 [![Django CI](https://github.com/llucas314/django-quotes-ci-cd/actions/workflows/main.yml/badge.svg)](https://github.com/llucas314/django-quotes-ci-cd/actions/workflows/main.yml)
+
 A mini Django REST API that returns programming quotes. Built to showcase CI/CD, testing, and Docker workflow.
 
 ## Features
