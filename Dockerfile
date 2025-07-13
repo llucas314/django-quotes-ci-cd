@@ -1,9 +1,9 @@
-FROM python:3.15-slim
+FROM python:3.13.5-slim
 
 #  Keeps Python from writing the .pyc files
-ENV PYTHONDONTWRITEBYTECODE 1 
+ENV PYTHONDONTWRITEBYTECODE=1 
 #  Keeps Python from buffering stdout and stderr
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR /code
 
