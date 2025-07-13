@@ -14,13 +14,13 @@ jobs:
           uses: docker/setup-docker-action@v4
 
         - name: Set up Docker Compose
-          run: docker-compose up --build -d
+          run: docker compose up --build -d
 
         - name: Run tests inside container
-          run: docker-compose exec -T web python manage.py test
+          run: docker compose exec -T web python manage.py test
 
         - name: Format
-          run: docker-compose exec -T web black --check .
+          run: docker compose exec -T web black --check .
 
         - name: Lint
-          run: docker-compose exec -T web flake8 .
+          run: docker compose exec -T web flake8 .
